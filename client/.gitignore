@@ -1,0 +1,97 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directories
+build/
+dist/
+out/
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Coverage directory used by testing tools
+coverage/
+*.lcov
+
+# Cache directories
+.cache/
+.next/
+.nuxt/
+.vite/
+.vscode/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# IDE directories
+.idea/
+.vscode/
+.history/
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# Parcel cache
+.cache/
+
+# SvelteKit build output
+.svelte-kit/
+
+# Storybook build output
+.storybook-static/
+
+# Next.js build output
+.next/
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# VuePress build output
+.vuepress/dist
+
+# Gridsome files
+.cache/
+dist/
+
+# FuseBox cache
+.fusebox/
+
+# Serverless directories
+.serverless
+
+# TernJS port file
+.tern-port
