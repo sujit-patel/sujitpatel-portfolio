@@ -3,7 +3,7 @@ import codeImg from "../assets/code.png";
 
 function Banner() {
   return (
-    <div className="flex md:px-14 flex-col-reverse sm:flex-row">
+    <div className="flex md:px-14 min-h-screen flex-col-reverse sm:flex-row">
       <div className="hero-content text-center flex flex-col">
         <h1 className="mb-5 text-5xl font-bold">
           It is <span className="text-sky-500">Better</span> to
@@ -17,7 +17,7 @@ function Banner() {
         </p>
         <button className="btn btn-outline btn-info">View My Work</button>
       </div>
-      <div className="w-full sm:w-3/4 flex items-center justify-center">
+      <div className="w-full sm:w-3/4 pt-2 flex items-center justify-center">
         <img src={codeImg} alt="codeImg" />
       </div>
     </div>
