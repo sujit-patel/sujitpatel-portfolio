@@ -27,6 +27,25 @@ function Navbar() {
         </Link>
       </li>
       <li>
+        <Link to="/skills">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 scale-150"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9.75 12l1.5-1.5m1.5 1.5l-1.5 1.5m4.5-1.5a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"
+            />
+          </svg>
+          Skills
+        </Link>
+      </li>
+      <li>
         <Link to="/about">
           <svg
             xmlns="http://www.w3.org/2000/svg"
