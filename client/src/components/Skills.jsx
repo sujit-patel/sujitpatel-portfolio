@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 import { getAnimationVariants } from "./animations.js";
 
 const skills = [
-  { src: "./assets/Skills/html.webp", alt: "HTML" },
-  { src: "./assets/Skills/css.png", alt: "CSS" },
-  { src: "./assets/Skills/js.webp", alt: "JavaScript" },
-  { src: "./assets/Skills/php.png", alt: "PHP" },
-  { src: "./assets/Skills/mysql.png", alt: "MySQL" },
-  { src: "./assets/Skills/bootstrap.png", alt: "Bootstrap" },
+  { src: "/assets/Skills/html.webp", alt: "HTML" },
+  { src: "/assets/Skills/css.png", alt: "CSS" },
+  { src: "/assets/Skills/js.webp", alt: "JavaScript" },
+  { src: "/assets/Skills/php.png", alt: "PHP" },
+  { src: "/assets/Skills/mysql.png", alt: "MySQL" },
+  { src: "/assets/Skills/bootstrap.png", alt: "Bootstrap" },
 ];
 
 const otherSkills = [
-  { src: "./src/assets/Skills/react.svg", alt: "React.js" },
-  { src: "./src/assets/Skills/Tailwind_CSS.png", alt: "Tailwind CSS" },
-  { src: "./src/assets/Skills/node-js.png", alt: "Node-js" },
-  { src: "./src/assets/Skills/express-js.png", alt: "Express-js" },
-  { src: "./src/assets/Skills/MongoDB.webp", alt: "MongoDB" },
+  { src: "/assets/Skills/react.svg", alt: "React.js" },
+  { src: "/assets/Skills/Tailwind_CSS.png", alt: "Tailwind CSS" },
+  { src: "/assets/Skills/node-js.png", alt: "Node-js" },
+  { src: "/assets/Skills/express-js.png", alt: "Express-js" },
+  { src: "/assets/Skills/MongoDB.webp", alt: "MongoDB" },
 ];
 
 const tools = [
-  { src: "./src/assets/Tools/vs_code.png", alt: "VS Code" },
-  { src: "./src/assets/Tools/Github img.jpg", alt: "GitHub" },
-  { src: "./src/assets/Tools/Power_Bi.png", alt: "Power Bi" },
-  { src: "./src/assets/Tools/jupyter.png", alt: "Jupyter" },
-  { src: "./src/assets/Tools/wordpress.webp", alt: "WordPress" },
+  { src: "/assets/Tools/vs_code.png", alt: "VS Code" },
+  { src: "/assets/Tools/Github img.jpg", alt: "GitHub" },
+  { src: "/assets/Tools/Power_Bi.png", alt: "Power Bi" },
+  { src: "/assets/Tools/jupyter.png", alt: "Jupyter" },
+  { src: "/assets/Tools/wordpress.webp", alt: "WordPress" },
 ];
 
 const Skills = () => {
