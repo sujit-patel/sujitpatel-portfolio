@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { getAnimationVariants } from "./animations.js";
 
 const skills = [
-  { src: "./src/assets/Skills/html.webp", alt: "HTML" },
-  { src: "./src/assets/Skills/css.png", alt: "CSS" },
-  { src: "./src/assets/Skills/js.webp", alt: "JavaScript" },
-  { src: "./src/assets/Skills/php.png", alt: "PHP" },
-  { src: "./src/assets/Skills/mysql.png", alt: "MySQL" },
-  { src: "./src/assets/Skills/bootstrap.png", alt: "Bootstrap" },
+  { src: "./assets/Skills/html.webp", alt: "HTML" },
+  { src: "./assets/Skills/css.png", alt: "CSS" },
+  { src: "./assets/Skills/js.webp", alt: "JavaScript" },
+  { src: "./assets/Skills/php.png", alt: "PHP" },
+  { src: "./assets/Skills/mysql.png", alt: "MySQL" },
+  { src: "./assets/Skills/bootstrap.png", alt: "Bootstrap" },
 ];
 
 const otherSkills = [
