@@ -1,96 +1,220 @@
-import React from "react";
-import codeImg from "../assets/code.png";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaBriefcase,
+  FaRocket,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Banner() {
+const Hero = () => {
+  const [showConfetti, setShowConfetti] = useState(false);
+  const { width, height } = useWindowSize();
+
+  const handleCelebration = () => {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 5000);
+  };
+
+  // Trigger animation on page load
+  useEffect(() => {
+    handleCelebration();
+  }, []);
+
   return (
-    <div>
-      <div className="flex md:px-14 flex-col-reverse sm:flex-row">
-        <div className="hero-content text-center flex flex-col">
-          <h1 className="mb-5 text-5xl font-bold">
-            It is <span className="text-sky-500">Better</span> to
-            <span className="text-sky-500"> Complete</span> than
-            <span className="text-pink-500"> Perfect.</span>
-          </h1>
-          <p className="mb-5 text-2xl text-center">
-            I specialize in crafting modern, responsive websites with a focus on
-            clean design and efficient functionality. Let's build something
-            great together!
+    <div className="min-h-screen bg-gray-900 text-white px-10 md:px-20">
+      {showConfetti && <Confetti width={width} height={height} />}
+
+      {/* ✅ Hero Section */}
+      <section className="flex flex-col md:flex-row w-full pt-5 px-5 items-center justify-center h-screen text-center">
+        <div className="flex w-full md:w-1/2 flex-col space-y-5">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Hi, I'm <span className="text-white">Sujit Patel</span>👋
+          </motion.h1>
+          <p className="text-gray-300 text-base md:text-lg">
+            A Passionate Full-Stack Developer 🚀
           </p>
-          <button className="btn btn-outline btn-info">View My Work</button>
-        </div>
-        <div className="w-full sm:w-3/4 pt-2 flex items-center justify-center">
-          <img src={codeImg} alt="codeImg" />
-        </div>
-      </div>
-      <div className="flex flex-col pb-10 items-center gap-3">
-        <div>
-          <h1 className="text-5xl">FIND ME ON</h1>
-          <p className="text-xl">Feel free to connect with me</p>
-        </div>
-        <nav>
-          <div className="flex gap-5">
-            <Link to="https://x.com/sujitpatel43">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
-            </Link>
-            <Link
-              to="https://github.com/sujit-patel"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href="./src/assets/Sujitpatel_Resume.pdf"
+              download="SujitPatel_Resume.pdf"
+              className="bg-pink-500 px-6 py-3 rounded-md text-white font-bold hover:bg-pink-600 transition"
+              whileHover={{ scale: 1.1 }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.799 8.205 11.385.6.11.82-.26.82-.578v-2.14c-3.338.726-4.043-1.416-4.043-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.805 1.304 3.492.997.108-.775.42-1.304.762-1.603-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.47-2.382 1.237-3.222-.123-.303-.537-1.525.118-3.176 0 0 1.01-.324 3.3 1.23a11.37 11.37 0 013.003-.404c1.018.005 2.044.138 3.003.404 2.287-1.554 3.296-1.23 3.296-1.23.657 1.65.244 2.873.12 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.625-5.48 5.922.432.374.824 1.11.824 2.237v3.317c0 .32.216.694.824.578C20.565 22.296 24 17.798 24 12.5 24 5.87 18.63.5 12 .5z"></path>
-              </svg>
-            </Link>
-            <Link
-              to="https://www.instagram.com/sujitpatel_43"
-              target="_blank"
-              rel="noopener noreferrer"
+              Download Resume
+            </motion.a>
+            <motion.button
+              className="bg-purple-500 px-6 py-3 rounded-md text-white font-bold hover:bg-purple-600 transition"
+              whileHover={{ scale: 1.1 }}
+              onClick={handleCelebration}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.33 3.608 1.304.975.975 1.243 2.243 1.305 3.608.058 1.265.069 1.645.069 4.849 0 3.204-.011 3.584-.069 4.849-.062 1.366-.33 2.633-1.305 3.608-.975.975-2.243 1.243-3.608 1.305-1.265.058-1.645.069-4.849.069-3.204 0-3.584-.011-4.849-.069-1.366-.062-2.633-.33-3.608-1.305-.975-.975-1.243-2.243-1.305-3.608C2.174 15.596 2.163 15.216 2.163 12c0-3.204.011-3.584.069-4.849.062-1.366.33-2.633 1.305-3.608.975-.975 2.243-1.243 3.608-1.305 1.265-.058 1.645-.069 4.849-.069zm0-2.163C8.755 0 8.333.01 7.052.07 5.786.129 4.545.425 3.464 1.506 2.384 2.586 2.088 3.827 2.03 5.093.97 6.374.96 6.796.96 12c0 5.204.01 5.626.07 6.907.058 1.266.354 2.507 1.434 3.587 1.08 1.08 2.32 1.376 3.587 1.434 1.281.06 1.703.07 6.907.07 5.204 0 5.626-.01 6.907-.07 1.266-.058 2.507-.354 3.587-1.434 1.08-1.08 1.376-2.32 1.434-3.587.06-1.281.07-1.703.07-6.907 0-5.204-.01-5.626-.07-6.907-.058-1.266-.354-2.507-1.434-3.587C19.507.354 18.266.058 17 .07 15.719.01 15.297 0 12 0zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-8 3.999 3.999 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"></path>
-              </svg>
-            </Link>
-            <Link
-              to="https://www.linkedin.com/in/sujitpatel43/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.25h-3v-4.5c0-1.104-.896-2-2-2s-2 .896-2 2v4.5h-3v-9h3v1.39c.894-1.063 2.433-1.78 4-1.78 2.485 0 4.5 2.015 4.5 4.5v5.89z"></path>
-              </svg>
-            </Link>
+              👋 Say Hello
+            </motion.button>
           </div>
-        </nav>
-      </div>
+        </div>
+        <div className="w-full md:w-1/2 flex items-center justify-center mt-10 md:mt-0">
+          <img
+            src="./src/assets/sujitpatel.png"
+            className="w-2/3 md:w-1/2 scale-150"
+            alt="Sujit Patel"
+          />
+        </div>
+      </section>
+
+      {/* ✅ About Me with Scroll Animation */}
+      <motion.section
+        className="py-20 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-4xl font-semibold text-pink-500">About Me</h2>
+        <p className="text-gray-300 text-xl mt-5 max-w-3xl mx-auto">
+          I am a{" "}
+          <span className="font-bold hover:underline cursor-pointer">
+            MERN Stack Developer
+          </span>{" "}
+          with a passion for building scalable web applications.
+        </p>
+      </motion.section>
+
+      {/* ✅ Services with Scroll Animation */}
+      <motion.div
+        id="service"
+        className="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto text-center"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="flex justify-center items-center gap-2 mb-4 text-2xl font-semibold">
+          <FaBriefcase />
+          <h2 className="uppercase">Work With Me</h2>
+        </div>
+        <p className="text-lg mb-4">
+          Looking for a{" "}
+          <span className="font-semibold">professional website</span> for your
+          business? I specialize in dynamic, responsive web solutions.
+          <FaRocket className="inline ml-1" />
+        </p>
+        <p className="bg-white text-pink-500 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition cursor-pointer">
+          📩 Let’s Connect
+        </p>
+      </motion.div>
+
+      {/* ✅ Projects with Scroll Animation */}
+      <motion.section
+        className="py-20 text-center"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-4xl font-semibold text-blue-500">Projects</h2>
+        <div className="grid md:grid-cols-2 gap-10 mt-5">
+          {[
+            {
+              title: "Real-Time Chat",
+              link: "https://github.com/sujit-patel/Real-Time-Chat",
+              image: "./src/assets/project/real time chat img.png",
+            },
+            {
+              title: "Bookstore Website",
+              link: "https://github.com/sujit-patel/bookstore",
+              image: "./src/assets/project/bookstore img.png",
+            },
+            {
+              title: "Amazon Sales Data Board",
+              link: "https://github.com/sujit-patel/Amazon-Sales-Dataset-Power-Bi",
+              image: "./src/assets/project/power bi.png",
+            },
+            {
+              title: "Sidcup Golf Family Clone",
+              link: "https://github.com/sujit-patel/sidcup-golf-family-clone",
+              image: "./src/assets/project/sidcup family golf clone img.png",
+            },
+          ].map((project, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-800 p-5 rounded-lg shadow-lg hover:shadow-blue-500 transition"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="rounded-lg w-full object-cover mb-3"
+              />
+              <h3 className="text-xl font-bold">{project.title}</h3>
+              <a
+                href={project.link}
+                target="_blank"
+                className="mt-3 text-blue-400 hover:underline"
+              >
+                View More
+              </a>
+            </motion.div>
+          ))}
+        </div>
+        {/* See All My Work Button */}
+        <div className="mt-10">
+          <Link
+            href="https://github.com/sujit-patel"
+            target="_blank"
+            className="bg-blue-500 px-6 py-3 rounded-md text-white font-bold hover:bg-blue-600 transition"
+          >
+            See All My Work
+          </Link>
+        </div>
+      </motion.section>
+
+      {/* ✅ Contact with Scroll Animation */}
+      <motion.section
+        className="py-20 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-4xl font-semibold text-green-500">Get in Touch</h2>
+        <p className="text-gray-300 mt-5">
+          Let's work together on something amazing! 🚀
+        </p>
+        <div className="flex justify-center gap-5 mt-5">
+          <a
+            href="mailto:sujitpatelp43@email.com"
+            className="text-gray-300 hover:text-green-500"
+          >
+            <FaEnvelope size={30} />
+          </a>
+          <a
+            href="https://linkedin.com/in/sujitpatel43"
+            className="text-gray-300 hover:text-blue-500"
+          >
+            <FaLinkedin size={30} />
+          </a>
+          <a
+            href="https://github.com/sujit-patel"
+            className="text-gray-300 hover:text-white"
+          >
+            <FaGithub size={30} />
+          </a>
+        </div>
+      </motion.section>
+
+      {/* ✅ Footer */}
+      <footer className="text-center py-5 border-t border-gray-700">
+        <p className="text-gray-400">
+          © {new Date().getFullYear()} Sujit Patel. All Rights Reserved.
+        </p>
+      </footer>
     </div>
   );
-}
+};
 
-export default Banner;
+export default Hero;

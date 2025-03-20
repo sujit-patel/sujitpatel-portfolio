@@ -7,7 +7,7 @@ function AllSkills() {
   return (
     <div className="min-h-screen flex flex-col justify-between">
       <Navbar />
-      <div className="py-10">
+      <div className="py-12">
         <Skills />
       </div>
       <Footer />

@@ -1,31 +1,135 @@
 import React from "react";
+import { GiSkills } from "react-icons/gi";
+import { motion } from "framer-motion";
+import { getAnimationVariants } from "./animations.js";
 
-function Skills() {
+const skills = [
+  { src: "./src/assets/Skills/html.webp", alt: "HTML" },
+  { src: "./src/assets/Skills/css.png", alt: "CSS" },
+  { src: "./src/assets/Skills/js.webp", alt: "JavaScript" },
+  { src: "./src/assets/Skills/php.png", alt: "PHP" },
+  { src: "./src/assets/Skills/mysql.png", alt: "MySQL" },
+  { src: "./src/assets/Skills/bootstrap.png", alt: "Bootstrap" },
+];
+
+const otherSkills = [
+  { src: "./src/assets/Skills/react.svg", alt: "React.js" },
+  { src: "./src/assets/Skills/Tailwind_CSS.png", alt: "Tailwind CSS" },
+  { src: "./src/assets/Skills/node-js.png", alt: "Node-js" },
+  { src: "./src/assets/Skills/express-js.png", alt: "Express-js" },
+  { src: "./src/assets/Skills/MongoDB.webp", alt: "MongoDB" },
+];
+
+const tools = [
+  { src: "./src/assets/Tools/vs_code.png", alt: "VS Code" },
+  { src: "./src/assets/Tools/Github img.jpg", alt: "GitHub" },
+  { src: "./src/assets/Tools/Power_Bi.png", alt: "Power Bi" },
+  { src: "./src/assets/Tools/jupyter.png", alt: "Jupyter" },
+  { src: "./src/assets/Tools/wordpress.webp", alt: "WordPress" },
+];
+
+const Skills = () => {
   return (
     <div className="px-20">
-      <div className="px-10 space-y-5 py-8 border rounded-md">
-        <div className="px-5 py-3 border rounded-md">
-          <h1>What I Do</h1>
-          <p>Work Samples</p>
+      <motion.div
+        className="px-10 space-y-5 py-8 border border-slate-600 rounded-md"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Heading Section */}
+        <div className="px-5 py-3">
+          <h1 className="text-6xl font-serif bg-clip-text">
+            What <span className="font-extrabold">I</span> Do
+          </h1>
         </div>
-        <div className="border px-5 py-3 space-y-5 rounded-md">
-          <h1>Tools I Use</h1>
-          <div className="flex flex-row flex-wrap py-5 rounded-md border">
-            <img className="h-16" src="https://sujit-patel.github.io/skill/canva.png" alt="" />
-            <img className="h-16" src="https://sujit-patel.github.io/skill/figma.png" alt="" />
-            <img className="h-16" src="D:\sujitpatel portfolio\client\src\assets\mongodb.png" alt="" />
+
+        {/* Basic Skillset Section */}
+        <div className="px-5 py-3 space-y-5">
+          <h1 className="flex items-center gap-2 text-xl font-extrabold">
+            <GiSkills className="scale-150 text-pink-500" />
+            <span className="text-pink-500 bg-gray-800 p-2 rounded-md shadow-lg">
+              Basic Skillset
+            </span>
+          </h1>
+          <div className="flex flex-wrap gap-5 px-5 border border-slate-600 py-5 rounded-md">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.alt}
+                className="flex flex-col items-center"
+              >
+                <motion.img
+                  className="h-16 shadow-lg cursor-pointer hover:scale-110 hover:shadow-[0_0_20px_rgba(255,105,180,0.7)] transition-transform duration-300"
+                  src={skill.src}
+                  alt={skill.alt}
+                  variants={getAnimationVariants(0)}
+                  initial="hidden"
+                  animate="visible"
+                  custom={index}
+                />
+                <span className="text-sm text-gray-400">{skill.alt}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
-        <div className="border px-5 py-3 space-y-5 rounded-md">
-          <h1>Professional Skillset</h1>
-          <div className="flex flex-row flex-wrap space-x-5  py-5 rounded-md border">
-            <img className="h-16" src="https://sujit-patel.github.io/skill/html%20css%20js.png" alt="" />
-            <img className="h-16" src="https://sujit-patel.github.io/skill/node%20js.png" alt="" />
+
+        {/* Advanced Skillset Section */}
+        <div className="px-5 py-3 space-y-5">
+          <h1 className="flex items-center gap-2 text-xl font-extrabold">
+            <GiSkills className="scale-150 text-pink-500" />
+            <span className="text-pink-500 bg-gray-800 p-2 rounded-md shadow-lg">
+              Advanced Skillset
+            </span>
+          </h1>
+          <div className="flex flex-wrap gap-5 px-5 border border-slate-600 py-5 rounded-md">
+            {otherSkills.map((skill, index) => (
+              <motion.div
+                key={skill.alt}
+                className="flex flex-col items-center"
+              >
+                <motion.img
+                  className="h-16 cursor-pointer shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(255,105,180,0.7)] transition-transform duration-300"
+                  src={skill.src}
+                  alt={skill.alt}
+                  variants={getAnimationVariants(1.5)}
+                  initial="hidden"
+                  animate="visible"
+                  custom={index}
+                />
+                <span className="text-sm text-gray-400">{skill.alt}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+
+        {/* Tools Section */}
+        <div className="px-5 py-3 space-y-5">
+          <h1 className="flex items-center gap-2 text-xl font-extrabold">
+            <GiSkills className="scale-150 text-blue-500" />
+            <span className="text-blue-500 bg-gray-800 p-2 rounded-md shadow-lg">
+              Tools & Technologies
+            </span>
+          </h1>
+          <div className="flex flex-wrap gap-5 px-5 border border-slate-600 py-5 rounded-md">
+            {tools.map((tool, index) => (
+              <motion.div key={tool.alt} className="flex flex-col items-center">
+                <motion.img
+                  className="h-16 cursor-pointer shadow-lg hover:scale-125 hover:shadow-[0_0_20px_rgba(255,105,180,0.7)] transition-transform duration-300"
+                  src={tool.src}
+                  alt={tool.alt}
+                  variants={getAnimationVariants(3)}
+                  initial="hidden"
+                  animate="visible"
+                  custom={index}
+                />
+                <span className="text-sm text-gray-400">{tool.alt}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
-}
+};
 
 export default Skills;

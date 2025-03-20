@@ -1,15 +1,15 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import ContactP from "../components/Contact";
 import Footer from "../components/Footer";
-import Contactus from "../components/Contact";
-function Contact() {
+import Navbar from "../components/Navbar";
+const Contact = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen justify-between">
       <Navbar />
-      <Contactus />
+      <ContactP />
       <Footer />
     </div>
   );
-}
+};
 
 export default Contact;
