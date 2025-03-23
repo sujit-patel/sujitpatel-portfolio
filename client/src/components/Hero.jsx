@@ -25,6 +25,28 @@ const Hero = () => {
     handleCelebration();
   }, []);
 
+  const project = [
+    {
+      title: "Real-Time Chat",
+      link: "https://github.com/sujit-patel/Real-Time-Chat",
+      image: "./src/assets/project/real time chat img.png",
+    },
+    {
+      title: "Bookstore Website",
+      link: "https://github.com/sujit-patel/bookstore",
+      image: "./src/assets/project/bookstore img.png",
+    },
+    {
+      title: "Amazon Sales Data Board",
+      link: "https://github.com/sujit-patel/Amazon-Sales-Dataset-Power-Bi",
+      image: "./src/assets/project/power bi.png",
+    },
+    {
+      title: "Sidcup Golf Family Clone",
+      link: "https://github.com/sujit-patel/sidcup-golf-family-clone",
+      image: "./src/assets/project/sidcup family golf clone img.png",
+    },
+  ];
   return (
     <div className="min-h-screen bg-gray-900 text-white px-10 md:px-20">
       {showConfetti && <Confetti width={width} height={height} />}
@@ -119,28 +141,7 @@ const Hero = () => {
       >
         <h2 className="text-4xl font-semibold text-blue-500">Projects</h2>
         <div className="grid md:grid-cols-2 gap-10 mt-5">
-          {[
-            {
-              title: "Real-Time Chat",
-              link: "https://github.com/sujit-patel/Real-Time-Chat",
-              image: "./src/assets/project/real time chat img.png",
-            },
-            {
-              title: "Bookstore Website",
-              link: "https://github.com/sujit-patel/bookstore",
-              image: "./src/assets/project/bookstore img.png",
-            },
-            {
-              title: "Amazon Sales Data Board",
-              link: "https://github.com/sujit-patel/Amazon-Sales-Dataset-Power-Bi",
-              image: "./src/assets/project/power bi.png",
-            },
-            {
-              title: "Sidcup Golf Family Clone",
-              link: "https://github.com/sujit-patel/sidcup-golf-family-clone",
-              image: "./src/assets/project/sidcup family golf clone img.png",
-            },
-          ].map((project, index) => (
+          {project.map((project, index) => (
             <motion.div
               key={index}
               className="bg-gray-800 p-5 rounded-lg shadow-lg hover:shadow-blue-500 transition"
