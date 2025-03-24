@@ -1,5 +1,5 @@
 import React from "react";
-import codeImg from "../assets/sujitpatel.png";
+import codeImg from "../../public/sujitpatel.png";
 import { Link } from "react-router-dom";
 
 function AboutP({ theme }) {

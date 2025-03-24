@@ -29,22 +29,22 @@ const Hero = () => {
     {
       title: "Real-Time Chat",
       link: "https://github.com/sujit-patel/Real-Time-Chat",
-      image: "./src/assets/project/real time chat img.png",
+      image: "../public/project/real time chat img.png",
     },
     {
       title: "Bookstore Website",
       link: "https://github.com/sujit-patel/bookstore",
-      image: "./src/assets/project/bookstore img.png",
+      image: "../public/project/bookstore img.png",
     },
     {
       title: "Amazon Sales Data Board",
       link: "https://github.com/sujit-patel/Amazon-Sales-Dataset-Power-Bi",
-      image: "./src/assets/project/power bi.png",
+      image: "../public/project/power bi.png",
     },
     {
       title: "Sidcup Golf Family Clone",
       link: "https://github.com/sujit-patel/sidcup-golf-family-clone",
-      image: "./src/assets/project/sidcup family golf clone img.png",
+      image: "../public/project/sidcup family golf clone img.png",
     },
   ];
   return (
@@ -52,7 +52,7 @@ const Hero = () => {
       {showConfetti && <Confetti width={width} height={height} />}
 
       {/* ✅ Hero Section */}
-      <section className="flex flex-col md:flex-row w-full pt-5 px-5 items-center justify-center h-screen text-center">
+      {/* <section className="flex flex-col md:flex-row w-full pt-5 px-5 items-center justify-center h-screen text-center">
         <div className="flex w-full md:w-1/2 flex-col space-y-5">
           <motion.h1
             className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
@@ -85,15 +85,15 @@ const Hero = () => {
         </div>
         <div className="w-full md:w-1/2 flex items-center justify-center mt-10 md:mt-0">
           <img
-            src="./src/assets/sujitpatel.png"
+            src="../public/sujitpatel.png"
             className="w-2/3 md:w-1/2 scale-150"
             alt="Sujit Patel"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* ✅ About Me with Scroll Animation */}
-      <motion.section
+      {/* <motion.section
         className="py-20 text-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -107,10 +107,10 @@ const Hero = () => {
           </span>{" "}
           with a passion for building scalable web applications.
         </p>
-      </motion.section>
+      </motion.section> */}
 
       {/* ✅ Services with Scroll Animation */}
-      <motion.div
+      {/* <motion.div
         id="service"
         className="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto text-center"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -130,10 +130,10 @@ const Hero = () => {
         <p className="bg-white text-pink-500 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition cursor-pointer">
           📩 Let’s Connect
         </p>
-      </motion.div>
+      </motion.div> */}
 
       {/* ✅ Projects with Scroll Animation */}
-      <motion.section
+      {/* <motion.section
         className="py-20 text-center"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -163,7 +163,6 @@ const Hero = () => {
             </motion.div>
           ))}
         </div>
-        {/* See All My Work Button */}
         <div className="mt-10">
           <Link
             href="https://github.com/sujit-patel"
@@ -173,10 +172,10 @@ const Hero = () => {
             See All My Work
           </Link>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* ✅ Contact with Scroll Animation */}
-      <motion.section
+      {/* <motion.section
         className="py-20 text-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +205,7 @@ const Hero = () => {
             <FaGithub size={30} />
           </a>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* ✅ Footer */}
       <footer className="text-center py-5 border-t border-gray-700">
