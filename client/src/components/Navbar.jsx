@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Profile from "../assets/Profile.png";
+// import Profile from "../assets/Profile.png";
 import Themecontroller from "./Themecontroller";
 import { FaHandshake } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -107,7 +107,7 @@ function Navbar() {
             className="btn btn-ghost btn-circle avatar"
           >
             <div className="w-9 rounded-full">
-              <img alt="Profile" src={Profile} />
+              <img alt="Profile" src="/assets/Profile.png"/>
             </div>
           </div>
         </div>

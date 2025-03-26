@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 import { getAnimationVariants } from "./animations.js";
 
 const skills = [
-  { src: "../public/Skills/html.webp", alt: "HTML" },
-  { src: "../public/Skills/css.png", alt: "CSS" },
-  { src: "../public/Skills/js.webp", alt: "JavaScript" },
-  { src: "../public/Skills/php.png", alt: "PHP" },
-  { src: "../public/Skills/mysql.png", alt: "MySQL" },
-  { src: "../public/Skills/bootstrap.png", alt: "Bootstrap" },
+  { src: "/assets/Skills/html.webp", alt: "HTML" },
+  { src: "/assets/Skills/css.png", alt: "CSS" },
+  { src: "/assets/Skills/js.webp", alt: "JavaScript" },
+  { src: "/assets/Skills/php.png", alt: "PHP" },
+  { src: "/assets/Skills/mysql.png", alt: "MySQL" },
+  { src: "/assets/Skills/bootstrap.png", alt: "Bootstrap" },
 ];
 
 const otherSkills = [
-  { src: "../public/Skills/react.svg", alt: "React.js" },
-  { src: "../public/Skills/Tailwind_CSS.png", alt: "Tailwind CSS" },
-  { src: "../public/Skills/node-js.png", alt: "Node-js" },
-  { src: "../public/Skills/express-js.png", alt: "Express-js" },
-  { src: "../public/Skills/MongoDB.webp", alt: "MongoDB" },
+  { src: "/assets/Skills/react.svg", alt: "React.js" },
+  { src: "/assets/Skills/Tailwind_CSS.png", alt: "Tailwind CSS" },
+  { src: "/assets/Skills/node-js.png", alt: "Node-js" },
+  { src: "/assets/Skills/express-js.png", alt: "Express-js" },
+  { src: "/assets/Skills/MongoDB.webp", alt: "MongoDB" },
 ];
 
 const tools = [
-  { src: "../public/Tools/vs_code.png", alt: "VS Code" },
-  { src: "../public/Tools/Github img.jpg", alt: "GitHub" },
-  { src: "../public/Tools/Power_Bi.png", alt: "Power Bi" },
-  { src: "../public/Tools/jupyter.png", alt: "Jupyter" },
-  { src: "../public/Tools/wordpress.webp", alt: "WordPress" },
+  { src: "/assets/Tools/vs_code.png", alt: "VS Code" },
+  { src: "/assets/Tools/Github img.jpg", alt: "GitHub" },
+  { src: "/assets/Tools/Power_BI.png", alt: "Power Bi" },
+  { src: "/assets/Tools/jupyter.png", alt: "Jupyter" },
+  { src: "/assets/Tools/wordpress.webp", alt: "WordPress" },
 ];
 
 const Skills = () => {

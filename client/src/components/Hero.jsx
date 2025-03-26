@@ -29,22 +29,22 @@ const Hero = () => {
     {
       title: "Real-Time Chat",
       link: "https://github.com/sujit-patel/Real-Time-Chat",
-      image: "../public/project/real time chat img.png",
+      image: "/assets/project/real time chat img.png",
     },
     {
       title: "Bookstore Website",
       link: "https://github.com/sujit-patel/bookstore",
-      image: "../public/project/bookstore img.png",
+      image: "/assets/project/bookstore img.png",
     },
     {
       title: "Amazon Sales Data Board",
       link: "https://github.com/sujit-patel/Amazon-Sales-Dataset-Power-Bi",
-      image: "../public/project/power bi.png",
+      image: "/assets/project/power bi.png",
     },
     {
       title: "Sidcup Golf Family Clone",
       link: "https://github.com/sujit-patel/sidcup-golf-family-clone",
-      image: "../public/project/sidcup family golf clone img.png",
+      image: "/assets/project/sidcup family golf clone img.png",
     },
   ];
   return (
@@ -85,7 +85,7 @@ const Hero = () => {
         </div>
         <div className="w-full md:w-1/2 flex items-center justify-center mt-10 md:mt-0">
           <img
-            src="../public/sujitpatel.png"
+            src="/assets/sujitpatel.png"
             className="w-2/3 md:w-1/2 scale-150"
             alt="Sujit Patel"
           />

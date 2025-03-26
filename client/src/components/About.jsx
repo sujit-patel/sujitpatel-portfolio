@@ -1,5 +1,4 @@
 import React from "react";
-import codeImg from "../../public/sujitpatel.png";
 import { Link } from "react-router-dom";
 
 function AboutP({ theme }) {
@@ -14,7 +13,7 @@ function AboutP({ theme }) {
       <div className="flex flex-col-reverse sm:flex-row items-center w-full max-w-6xl">
         {/* Image Section */}
         <div className="w-full profile sm:w-3/4 pt-2 flex items-center justify-center">
-          <img src={codeImg} alt="codeImg" className="rounded-lg shadow-lg" />
+          <img src="sujitpatel.png" alt="codeImg" className="rounded-lg shadow-lg" />
         </div>
 
         {/* Text Content Section */}
