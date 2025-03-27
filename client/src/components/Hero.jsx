@@ -67,7 +67,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
-              href="./src/assets/Sujitpatel_Resume.pdf"
+              href="/assets/Sujitpatel_Resume.pdf"
               download="SujitPatel_Resume.pdf"
               className="bg-pink-500 px-6 py-3 rounded-md text-white font-bold hover:bg-pink-600 transition"
               whileHover={{ scale: 1.1 }}
